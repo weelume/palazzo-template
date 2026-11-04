@@ -1,0 +1,187 @@
+import type { SiteTemplate } from "../../types";
+export const palazzoTemplate: SiteTemplate = {
+  id: "palazzo",
+  gitUrl: "https://github.com/weelume/palazzo-template",
+  name: "Palazzo · 时令餐厅与酒窖",
+  localizedNames: { en: "Palazzo · Tasting Menu & Wine Room" },
+  sceneId: "corporate-site",
+  listed: false,
+  tags: [
+    "餐厅",
+    "八道菜转桌",
+    "擦雾玻璃",
+    "3D 礼品卡",
+    "双语",
+    "PC / iPad / H5",
+  ],
+  summary:
+    "深色亚麻与胡桃木质感的季节餐厅整站，包含八道菜转桌、菜单拖拽、私人宴请、礼品卡与预约日历。",
+  accentColor: "#c6a873",
+  cover: "/templates/palazzo/screenshots/desktop-home.webp",
+  screenshots: [
+    {
+      src: "/templates/palazzo/screenshots/desktop-home.webp",
+      alt: "Palazzo desktop /",
+      device: "desktop",
+      width: 1430,
+      height: 993,
+    },
+    {
+      src: "/templates/palazzo/screenshots/desktop-menu.webp",
+      alt: "Palazzo desktop /menu",
+      device: "desktop",
+      width: 1430,
+      height: 993,
+    },
+    {
+      src: "/templates/palazzo/screenshots/desktop-private.webp",
+      alt: "Palazzo desktop /private-dining",
+      device: "desktop",
+      width: 1430,
+      height: 993,
+    },
+    {
+      src: "/templates/palazzo/screenshots/desktop-reservations.webp",
+      alt: "Palazzo desktop /reservations",
+      device: "desktop",
+      width: 1430,
+      height: 993,
+    },
+    {
+      src: "/templates/palazzo/screenshots/tablet-home.webp",
+      alt: "Palazzo tablet /",
+      device: "tablet",
+      width: 824,
+      height: 1166,
+    },
+    {
+      src: "/templates/palazzo/screenshots/tablet-menu.webp",
+      alt: "Palazzo tablet /menu",
+      device: "tablet",
+      width: 824,
+      height: 1166,
+    },
+    {
+      src: "/templates/palazzo/screenshots/tablet-private.webp",
+      alt: "Palazzo tablet /private-dining",
+      device: "tablet",
+      width: 824,
+      height: 1166,
+    },
+    {
+      src: "/templates/palazzo/screenshots/tablet-reservations.webp",
+      alt: "Palazzo tablet /reservations",
+      device: "tablet",
+      width: 824,
+      height: 1166,
+    },
+    {
+      src: "/templates/palazzo/screenshots/mobile-home.webp",
+      alt: "Palazzo mobile /",
+      device: "mobile",
+      width: 380,
+      height: 822,
+    },
+    {
+      src: "/templates/palazzo/screenshots/mobile-menu.webp",
+      alt: "Palazzo mobile /menu",
+      device: "mobile",
+      width: 380,
+      height: 822,
+    },
+    {
+      src: "/templates/palazzo/screenshots/mobile-private.webp",
+      alt: "Palazzo mobile /private-dining",
+      device: "mobile",
+      width: 380,
+      height: 822,
+    },
+    {
+      src: "/templates/palazzo/screenshots/mobile-reservations.webp",
+      alt: "Palazzo mobile /reservations",
+      device: "mobile",
+      width: 380,
+      height: 822,
+    },
+  ],
+  surfaces: [
+    {
+      id: "site",
+      name: "官网",
+      platform: "pc",
+      locales: ["zh", "en"],
+      pages: [
+        {
+          slug: "",
+          title: "首页",
+          localizedTitles: { en: "Home" },
+          load: () => import("./pages/Home"),
+        },
+        {
+          slug: "menu",
+          title: "时令菜单",
+          localizedTitles: { en: "Menu" },
+          load: () => import("./pages/Menu"),
+        },
+        {
+          slug: "the-room",
+          title: "我们的餐厅",
+          localizedTitles: { en: "The room" },
+          load: () => import("./pages/Room"),
+        },
+        {
+          slug: "private-dining",
+          title: "私人宴请",
+          localizedTitles: { en: "Private dining" },
+          load: () => import("./pages/PrivateDining"),
+        },
+        {
+          slug: "gift-cards",
+          title: "礼品卡",
+          localizedTitles: { en: "Gift cards" },
+          load: () => import("./pages/Gifts"),
+        },
+        {
+          slug: "reservations",
+          title: "预订席位",
+          localizedTitles: { en: "Reservations" },
+          load: () => import("./pages/Reservations"),
+        },
+        {
+          slug: "read-me",
+          title: "使用指南",
+          localizedTitles: { en: "Read me" },
+          load: () => import("./pages/ReadMe"),
+        },
+        {
+          slug: "legal/privacy",
+          title: "隐私政策",
+          localizedTitles: { en: "Privacy" },
+          load: () =>
+            import("./pages/Legal").then((m) => ({ default: m.Privacy })),
+        },
+        {
+          slug: "legal/terms-of-booking",
+          title: "预订条款",
+          localizedTitles: { en: "Terms of booking" },
+          load: () =>
+            import("./pages/Legal").then((m) => ({ default: m.Terms })),
+        },
+        {
+          slug: "legal/allergens",
+          title: "过敏原说明",
+          localizedTitles: { en: "Allergens" },
+          load: () =>
+            import("./pages/Legal").then((m) => ({ default: m.Allergens })),
+        },
+        {
+          slug: "legal/cookies",
+          title: "Cookie 说明",
+          localizedTitles: { en: "Cookies" },
+          load: () =>
+            import("./pages/Legal").then((m) => ({ default: m.Cookies })),
+        },
+      ],
+    },
+  ],
+};

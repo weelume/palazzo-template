@@ -1,0 +1,14 @@
+{
+  "beforeDrag": {
+    "angle": "transform: rotate(585deg);",
+    "course": "Course 6 of 8"
+  },
+  "released": {
+    "angle": "transform: rotate(545.972deg);",
+    "course": "Course 5 of 8"
+  },
+  "settled": {
+    "angle": "transform: rotate(495deg);",
+    "course": "Course 4 of 8"
+  }
+}

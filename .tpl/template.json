@@ -1,0 +1,232 @@
+{
+  "$schema": "./schemas/template.schema.json",
+  "format": "git-template",
+  "formatVersion": "0.2.0",
+  "id": "palazzo",
+  "version": "1.0.0",
+  "name": "Palazzo · 时令餐厅与酒窖",
+  "gitUrl": "https://github.com/weelume/palazzo-template",
+  "sceneId": "corporate-site",
+  "listed": false,
+  "tags": [
+    "餐厅",
+    "转桌交互",
+    "擦雾玻璃",
+    "双语"
+  ],
+  "summary": "包含十一页、季节菜单、私人宴请、礼品卡与演示预约的双语餐厅模板。",
+  "accentColor": "#c6a873",
+  "cover": "assets/desktop-home.webp",
+  "screenshots": [
+    {
+      "src": "assets/desktop-home.webp",
+      "alt": "Palazzo desktop /",
+      "device": "desktop",
+      "width": 1430,
+      "height": 993,
+      "surfaceId": "site",
+      "pageSlug": ""
+    },
+    {
+      "src": "assets/desktop-menu.webp",
+      "alt": "Palazzo desktop /menu",
+      "device": "desktop",
+      "width": 1430,
+      "height": 993,
+      "surfaceId": "site",
+      "pageSlug": "menu"
+    },
+    {
+      "src": "assets/desktop-private.webp",
+      "alt": "Palazzo desktop /private-dining",
+      "device": "desktop",
+      "width": 1430,
+      "height": 993,
+      "surfaceId": "site",
+      "pageSlug": "private-dining"
+    },
+    {
+      "src": "assets/desktop-reservations.webp",
+      "alt": "Palazzo desktop /reservations",
+      "device": "desktop",
+      "width": 1430,
+      "height": 993,
+      "surfaceId": "site",
+      "pageSlug": "reservations"
+    },
+    {
+      "src": "assets/tablet-home.webp",
+      "alt": "Palazzo tablet /",
+      "device": "tablet",
+      "width": 824,
+      "height": 1166,
+      "surfaceId": "site",
+      "pageSlug": ""
+    },
+    {
+      "src": "assets/tablet-menu.webp",
+      "alt": "Palazzo tablet /menu",
+      "device": "tablet",
+      "width": 824,
+      "height": 1166,
+      "surfaceId": "site",
+      "pageSlug": "menu"
+    },
+    {
+      "src": "assets/tablet-private.webp",
+      "alt": "Palazzo tablet /private-dining",
+      "device": "tablet",
+      "width": 824,
+      "height": 1166,
+      "surfaceId": "site",
+      "pageSlug": "private-dining"
+    },
+    {
+      "src": "assets/tablet-reservations.webp",
+      "alt": "Palazzo tablet /reservations",
+      "device": "tablet",
+      "width": 824,
+      "height": 1166,
+      "surfaceId": "site",
+      "pageSlug": "reservations"
+    },
+    {
+      "src": "assets/mobile-home.webp",
+      "alt": "Palazzo mobile /",
+      "device": "mobile",
+      "width": 380,
+      "height": 822,
+      "surfaceId": "site",
+      "pageSlug": ""
+    },
+    {
+      "src": "assets/mobile-menu.webp",
+      "alt": "Palazzo mobile /menu",
+      "device": "mobile",
+      "width": 380,
+      "height": 822,
+      "surfaceId": "site",
+      "pageSlug": "menu"
+    },
+    {
+      "src": "assets/mobile-private.webp",
+      "alt": "Palazzo mobile /private-dining",
+      "device": "mobile",
+      "width": 380,
+      "height": 822,
+      "surfaceId": "site",
+      "pageSlug": "private-dining"
+    },
+    {
+      "src": "assets/mobile-reservations.webp",
+      "alt": "Palazzo mobile /reservations",
+      "device": "mobile",
+      "width": 380,
+      "height": 822,
+      "surfaceId": "site",
+      "pageSlug": "reservations"
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "site",
+      "name": "官网",
+      "platform": "pc",
+      "locales": [
+        "zh",
+        "en"
+      ],
+      "pages": [
+        {
+          "slug": "",
+          "title": "首页",
+          "localizedTitles": {
+            "en": "Home"
+          }
+        },
+        {
+          "slug": "menu",
+          "title": "时令菜单",
+          "localizedTitles": {
+            "en": "Menu"
+          }
+        },
+        {
+          "slug": "the-room",
+          "title": "我们的餐厅",
+          "localizedTitles": {
+            "en": "The room"
+          }
+        },
+        {
+          "slug": "private-dining",
+          "title": "私人宴请",
+          "localizedTitles": {
+            "en": "Private dining"
+          }
+        },
+        {
+          "slug": "gift-cards",
+          "title": "礼品卡",
+          "localizedTitles": {
+            "en": "Gift cards"
+          }
+        },
+        {
+          "slug": "reservations",
+          "title": "预订席位",
+          "localizedTitles": {
+            "en": "Reservations"
+          }
+        },
+        {
+          "slug": "read-me",
+          "title": "使用指南",
+          "localizedTitles": {
+            "en": "Read me"
+          }
+        },
+        {
+          "slug": "legal/privacy",
+          "title": "隐私政策",
+          "localizedTitles": {
+            "en": "Privacy"
+          }
+        },
+        {
+          "slug": "legal/terms-of-booking",
+          "title": "预订条款",
+          "localizedTitles": {
+            "en": "Terms of booking"
+          }
+        },
+        {
+          "slug": "legal/allergens",
+          "title": "过敏原说明",
+          "localizedTitles": {
+            "en": "Allergens"
+          }
+        },
+        {
+          "slug": "legal/cookies",
+          "title": "Cookie 说明",
+          "localizedTitles": {
+            "en": "Cookies"
+          }
+        }
+      ]
+    }
+  ],
+  "license": {
+    "type": "restricted",
+    "file": "docs/LICENSE.md",
+    "summary": "源码与参考站图片权利分开记录，图片再分发及商业授权待确认。",
+    "redistributionAllowed": false
+  },
+  "localizedNames": {
+    "en": "Palazzo · Tasting Menu & Wine Room"
+  },
+  "localizedSummaries": {
+    "en": "An eleven-page bilingual seasonal restaurant template with an interactive table, cellar dining, gift cards and demo reservations."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "railBefore": 0,
+  "railAfter": {
+    "left": 40,
+    "plate": "transform: rotate(4.32892deg);"
+  },
+  "gift": {
+    "card": "PalazzoNo. 0142Demo Guest demo@example.comA seasonal dinner for you€250",
+    "design": "pz-gift-card linen",
+    "rotation": "transform: rotateY(180deg);",
+    "status": "Gift card options validated locally. No order, payment, email or storage has been made.",
+    "total": "Total€256"
+  },
+  "faq": {
+    "answer": "Yes. Gift cards can be used in the restaurant or the Cellar Room. Mention the card when enquiring about a date.",
+    "expanded": "true"
+  },
+  "seating": {
+    "chairs": 14,
+    "label": "Two tables · 8 + 6 seating layout",
+    "tables": 2
+  },
+  "enquiry": "Your details passed local validation. This is a demo form. Nothing has been sent or saved."
+}

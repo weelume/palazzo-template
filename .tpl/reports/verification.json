@@ -1,0 +1,85 @@
+{
+  "$schema": "../schemas/verification.schema.json",
+  "format": "git-template-verification",
+  "formatVersion": "0.2.0",
+  "status": "passed",
+  "sourceDigest": "83ea255c8dc8f8f6cbbb2ff25f7d099e80c52f90be547d3a72da5b68a2d50617",
+  "sourceCommit": null,
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "node": "v24.16.0",
+    "packageManager": "pnpm@9.15.4",
+    "cleanDirectory": true,
+    "localGitClone": false
+  },
+  "checks": [
+    {
+      "id": "install",
+      "status": "passed",
+      "cwd": ".",
+      "argv": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile"
+      ],
+      "startedAt": "2026-11-04T04:38:08.884Z",
+      "finishedAt": "2026-11-04T04:38:09.525Z",
+      "exitCode": 0
+    },
+    {
+      "id": "typecheck",
+      "status": "passed",
+      "cwd": ".",
+      "argv": [
+        "pnpm",
+        "run",
+        "typecheck"
+      ],
+      "startedAt": "2026-11-04T04:38:09.526Z",
+      "finishedAt": "2026-11-04T04:38:10.713Z",
+      "exitCode": 0
+    },
+    {
+      "id": "lint",
+      "status": "passed",
+      "cwd": ".",
+      "argv": [
+        "pnpm",
+        "run",
+        "lint"
+      ],
+      "startedAt": "2026-11-04T04:38:10.714Z",
+      "finishedAt": "2026-11-04T04:38:13.398Z",
+      "exitCode": 0
+    },
+    {
+      "id": "build",
+      "status": "passed",
+      "cwd": ".",
+      "argv": [
+        "pnpm",
+        "run",
+        "build"
+      ],
+      "startedAt": "2026-11-04T04:38:13.398Z",
+      "finishedAt": "2026-11-04T04:38:31.721Z",
+      "exitCode": 0
+    }
+  ],
+  "services": [
+    {
+      "id": "web",
+      "status": "passed",
+      "stopped": true,
+      "checkedAt": "2026-11-04T04:38:33.422Z",
+      "reason": "独立生产服务 PORT=13966，22 个双语路径 HTTP 200，验收后已停止。"
+    }
+  ],
+  "limitations": [
+    "浏览器使用内置浏览器模拟视口，真实 iPad / iPhone 触屏与系统减少动态效果尚未实机验收。",
+    "雾层文字使用字体遮罩渐显，与参考站手写笔迹存在细节差异。",
+    "图片再分发及商业授权待确认。"
+  ],
+  "checkedAt": "2026-11-04T04:38:33.422Z"
+}

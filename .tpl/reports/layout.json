@@ -1,0 +1,442 @@
+[
+  {
+    "device": "desktop",
+    "path": "/",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "扇贝 焦化黄油榛子",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/menu",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "时令菜单",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/the-room",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "我们的餐厅",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/private-dining",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "酒窖里的私人相聚",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/gift-cards",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "赠一场值得记住的晚宴",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/reservations",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "预订一席共赴今晚",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/read-me",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "使用指南",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/legal/privacy",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "隐私政策",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/legal/terms-of-booking",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "预订条款",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/legal/allergens",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "过敏原说明",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "desktop",
+    "path": "/legal/cookies",
+    "broken": [],
+    "clientWidth": 1430,
+    "h": 1000,
+    "heading": "Cookie 说明",
+    "scrollWidth": 1430,
+    "w": 1440
+  },
+  {
+    "device": "tablet",
+    "path": "/",
+    "broken": [],
+    "clientWidth": 824,
+    "h": 1180,
+    "heading": "扇贝 焦化黄油榛子",
+    "scrollWidth": 824,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/menu",
+    "broken": [],
+    "clientWidth": 824,
+    "h": 1180,
+    "heading": "时令菜单",
+    "scrollWidth": 824,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/the-room",
+    "broken": [],
+    "clientWidth": 824,
+    "h": 1180,
+    "heading": "我们的餐厅",
+    "scrollWidth": 824,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/private-dining",
+    "broken": [],
+    "clientWidth": 824,
+    "h": 1180,
+    "heading": "酒窖里的私人相聚",
+    "scrollWidth": 824,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/gift-cards",
+    "broken": [],
+    "clientWidth": 824,
+    "h": 1180,
+    "heading": "赠一场值得记住的晚宴",
+    "scrollWidth": 824,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/reservations",
+    "broken": [],
+    "clientWidth": 824,
+    "h": 1180,
+    "heading": "预订一席共赴今晚",
+    "scrollWidth": 824,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/read-me",
+    "broken": [],
+    "clientWidth": 824,
+    "h": 1180,
+    "heading": "使用指南",
+    "scrollWidth": 824,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/legal/privacy",
+    "broken": [],
+    "clientWidth": 824,
+    "h": 1180,
+    "heading": "隐私政策",
+    "scrollWidth": 824,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/legal/terms-of-booking",
+    "broken": [],
+    "clientWidth": 824,
+    "h": 1180,
+    "heading": "预订条款",
+    "scrollWidth": 824,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/legal/allergens",
+    "broken": [],
+    "clientWidth": 834,
+    "h": 1180,
+    "heading": "过敏原说明",
+    "scrollWidth": 834,
+    "w": 834
+  },
+  {
+    "device": "tablet",
+    "path": "/legal/cookies",
+    "broken": [],
+    "clientWidth": 834,
+    "h": 1180,
+    "heading": "Cookie 说明",
+    "scrollWidth": 834,
+    "w": 834
+  },
+  {
+    "device": "mobile",
+    "path": "/",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "扇贝 焦化黄油榛子",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/menu",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "时令菜单",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/the-room",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "我们的餐厅",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/private-dining",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "酒窖里的私人相聚",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/gift-cards",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "赠一场值得记住的晚宴",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/reservations",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "预订一席共赴今晚",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/read-me",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "使用指南",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/legal/privacy",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "隐私政策",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/legal/terms-of-booking",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "预订条款",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/legal/allergens",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "过敏原说明",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "mobile",
+    "path": "/legal/cookies",
+    "broken": [],
+    "clientWidth": 380,
+    "h": 844,
+    "heading": "Cookie 说明",
+    "scrollWidth": 380,
+    "w": 390
+  },
+  {
+    "device": "narrow",
+    "path": "/",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "扇贝 焦化黄油榛子",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/menu",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "时令菜单",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/the-room",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "我们的餐厅",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/private-dining",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "酒窖里的私人相聚",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/gift-cards",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "赠一场值得记住的晚宴",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/reservations",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "预订一席共赴今晚",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/read-me",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "使用指南",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/legal/privacy",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "隐私政策",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/legal/terms-of-booking",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "预订条款",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/legal/allergens",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "过敏原说明",
+    "scrollWidth": 310,
+    "w": 320
+  },
+  {
+    "device": "narrow",
+    "path": "/legal/cookies",
+    "broken": [],
+    "clientWidth": 310,
+    "h": 844,
+    "heading": "Cookie 说明",
+    "scrollWidth": 310,
+    "w": 320
+  }
+]

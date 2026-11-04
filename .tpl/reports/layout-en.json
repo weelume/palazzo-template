@@ -1,0 +1,156 @@
+[
+  {
+    "device": "tablet",
+    "slug": "",
+    "clientWidth": 824,
+    "heading": "Scallop, brown butter, hazelnut",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "menu",
+    "clientWidth": 824,
+    "heading": "The menu",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "the-room",
+    "clientWidth": 824,
+    "heading": "The room",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "private-dining",
+    "clientWidth": 824,
+    "heading": "The Cellar Room",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "gift-cards",
+    "clientWidth": 824,
+    "heading": "Gift adinner",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "reservations",
+    "clientWidth": 824,
+    "heading": "Book atable",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "read-me",
+    "clientWidth": 824,
+    "heading": "Read me",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "legal/privacy",
+    "clientWidth": 824,
+    "heading": "Privacy",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "legal/terms-of-booking",
+    "clientWidth": 824,
+    "heading": "Terms of booking",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "legal/allergens",
+    "clientWidth": 824,
+    "heading": "Allergens",
+    "scrollWidth": 824
+  },
+  {
+    "device": "tablet",
+    "slug": "legal/cookies",
+    "clientWidth": 824,
+    "heading": "Cookies",
+    "scrollWidth": 824
+  },
+  {
+    "device": "narrow",
+    "slug": "",
+    "clientWidth": 310,
+    "heading": "Scallop, brown butter, hazelnut",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "menu",
+    "clientWidth": 310,
+    "heading": "The menu",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "the-room",
+    "clientWidth": 310,
+    "heading": "The room",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "private-dining",
+    "clientWidth": 310,
+    "heading": "The Cellar Room",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "gift-cards",
+    "clientWidth": 310,
+    "heading": "Gift adinner",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "reservations",
+    "clientWidth": 310,
+    "heading": "Book atable",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "read-me",
+    "clientWidth": 310,
+    "heading": "Read me",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "legal/privacy",
+    "clientWidth": 310,
+    "heading": "Privacy",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "legal/terms-of-booking",
+    "clientWidth": 310,
+    "heading": "Terms of booking",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "legal/allergens",
+    "clientWidth": 310,
+    "heading": "Allergens",
+    "scrollWidth": 310
+  },
+  {
+    "device": "narrow",
+    "slug": "legal/cookies",
+    "clientWidth": 310,
+    "heading": "Cookies",
+    "scrollWidth": 310
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "pauseBefore": {
+    "course": "Course 4 of 8",
+    "transform": "transform:rotate(135deg)"
+  },
+  "pauseAfter": {
+    "course": "Course 4 of 8",
+    "transform": "transform:rotate(135deg)"
+  },
+  "keyboard": "Course 5 of 8",
+  "resumed": "Course 6 of 8",
+  "pairing": [
+    "false",
+    "false"
+  ]
+}
