@@ -3,17 +3,12 @@
   "format": "git-template",
   "formatVersion": "0.2.0",
   "id": "palazzo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Palazzo · 时令餐厅与酒窖",
   "gitUrl": "https://github.com/weelume/palazzo-template",
   "sceneId": "corporate-site",
   "listed": false,
-  "tags": [
-    "餐厅",
-    "转桌交互",
-    "擦雾玻璃",
-    "双语"
-  ],
+  "tags": ["餐厅", "转桌交互", "擦雾玻璃", "双语"],
   "summary": "包含十一页、季节菜单、私人宴请、礼品卡与演示预约的双语餐厅模板。",
   "accentColor": "#c6a873",
   "cover": "assets/desktop-home.webp",
@@ -132,10 +127,7 @@
       "id": "site",
       "name": "官网",
       "platform": "pc",
-      "locales": [
-        "zh",
-        "en"
-      ],
+      "locales": ["zh", "en"],
       "pages": [
         {
           "slug": "",

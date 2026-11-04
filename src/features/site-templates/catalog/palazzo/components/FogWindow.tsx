@@ -14,6 +14,7 @@ interface Droplet {
 export function FogWindow({ locale = "zh" }: { locale?: TemplateLocale }) {
   const region = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
+  const mask = useRef<HTMLCanvasElement | null>(null);
   const water = useRef<HTMLCanvasElement>(null);
   const particles = useRef<Droplet[]>([]);
   const lastPoint = useRef<{ x: number; y: number } | null>(null);
@@ -29,31 +30,37 @@ export function FogWindow({ locale = "zh" }: { locale?: TemplateLocale }) {
     const context = element.getContext("2d"),
       waterContext = waterElement.getContext("2d");
     if (!context || !waterContext) return;
+    const texture = document.createElement("canvas");
+    const maskCanvas = document.createElement("canvas");
+    const textureContext = texture.getContext("2d");
+    const maskContext = maskCanvas.getContext("2d");
+    if (!textureContext || !maskContext) return;
+    mask.current = maskCanvas;
     const image = new Image();
     let frame = 0,
-      last = 0;
-    function paint(alpha = 1) {
-      if (!context || !element) return;
+      last = 0,
+      regrowthElapsed = 0;
+    function paintTexture() {
+      if (!textureContext || !element || !maskContext) return;
       const scale = Math.max(
         element.width / image.naturalWidth,
         element.height / image.naturalHeight,
       );
       const width = image.naturalWidth * scale + 40,
         height = image.naturalHeight * scale + 40;
-      context.globalCompositeOperation = "source-over";
-      context.globalAlpha = alpha;
-      context.filter = "blur(22px)";
-      context.drawImage(
+      textureContext.filter = "blur(22px)";
+      textureContext.drawImage(
         image,
         (element.width - width) / 2,
         (element.height - height) / 2,
         width,
         height,
       );
-      context.filter = "none";
-      context.fillStyle = "rgba(209,219,232,.26)";
-      context.fillRect(0, 0, element.width, element.height);
-      context.globalAlpha = 1;
+      textureContext.filter = "none";
+      textureContext.fillStyle = "rgba(209,219,232,.26)";
+      textureContext.fillRect(0, 0, element.width, element.height);
+      maskContext.fillStyle = "#fff";
+      maskContext.fillRect(0, 0, element.width, element.height);
     }
     function resize() {
       if (!element || !waterElement) return;
@@ -61,12 +68,31 @@ export function FogWindow({ locale = "zh" }: { locale?: TemplateLocale }) {
       element.height = element.clientHeight;
       waterElement.width = element.width;
       waterElement.height = element.height;
-      if (image.complete && image.naturalWidth) paint();
+      texture.width = maskCanvas.width = element.width;
+      texture.height = maskCanvas.height = element.height;
+      if (image.complete && image.naturalWidth) paintTexture();
     }
     function tick(now: number) {
       const dt = last ? Math.min(0.1, (now - last) / 1000) : 0;
       last = now;
-      if (image.naturalWidth) paint(Math.min(1, (dt / 8) * 1.4));
+      // 雾纹理保持不变，只恢复透明度遮罩，避免逐帧混合照片导致色带与像素量化累积。
+      regrowthElapsed += dt;
+      if (maskContext && regrowthElapsed >= 0.08) {
+        maskContext.globalCompositeOperation = "source-over";
+        maskContext.globalAlpha = Math.min(1, (regrowthElapsed / 8) * 1.4);
+        maskContext.fillStyle = "#fff";
+        maskContext.fillRect(0, 0, maskCanvas.width, maskCanvas.height);
+        maskContext.globalAlpha = 1;
+        regrowthElapsed = 0;
+      }
+      if (context && element) {
+        context.clearRect(0, 0, element.width, element.height);
+        context.globalCompositeOperation = "source-over";
+        context.drawImage(texture, 0, 0);
+        context.globalCompositeOperation = "destination-in";
+        context.drawImage(maskCanvas, 0, 0);
+        context.globalCompositeOperation = "source-over";
+      }
       if (waterContext && waterElement) {
         waterContext.clearRect(0, 0, waterElement.width, waterElement.height);
         particles.current = particles.current.filter(
@@ -109,11 +135,12 @@ export function FogWindow({ locale = "zh" }: { locale?: TemplateLocale }) {
       cancelAnimationFrame(frame);
       observer.disconnect();
       image.onload = null;
+      mask.current = null;
     };
   }, [clear, reduced, visible]);
   function erase(event: React.PointerEvent<HTMLCanvasElement>) {
     const element = event.currentTarget,
-      context = element.getContext("2d");
+      context = mask.current?.getContext("2d");
     if (!context) return;
     const rect = element.getBoundingClientRect();
     const x = event.clientX - rect.left,
