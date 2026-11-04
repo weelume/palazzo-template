@@ -1,0 +1,68 @@
+[
+  {
+    "device": "desktop",
+    "phase": "first-observed",
+    "opacity": "0.369909",
+    "position": "width: 1400px; height: 1400px; left: 624.76px; top: -160px; opacity: 0; transform: translateX(22%) rotate(-35deg);"
+  },
+  {
+    "device": "desktop",
+    "phase": "settled",
+    "overflow": false,
+    "position": "width: 1400px; height: 1400px; left: 624.76px; top: -160px; opacity: 1; transform: none;",
+    "scales": [
+      "none",
+      "none",
+      "none",
+      "matrix(1.26, 0, 0, 1.26, 0, 0)",
+      "none",
+      "none",
+      "none",
+      "none"
+    ]
+  },
+  {
+    "device": "tablet",
+    "phase": "first-observed",
+    "opacity": "0.36637",
+    "position": "width: 1078px; height: 1078px; left: -127px; top: 487.85px; opacity: 0; transform: translateY(16%) rotate(-35deg);"
+  },
+  {
+    "device": "tablet",
+    "phase": "settled",
+    "overflow": false,
+    "position": "width: 1078px; height: 1078px; left: -127px; top: 487.85px; opacity: 1; transform: none;",
+    "scales": [
+      "none",
+      "none",
+      "none",
+      "matrix(1.26, 0, 0, 1.26, 0, 0)",
+      "none",
+      "none",
+      "none",
+      "none"
+    ]
+  },
+  {
+    "device": "mobile",
+    "phase": "first-observed",
+    "opacity": "0.198365",
+    "position": "width: 744.8px; height: 744.8px; left: -182.4px; top: 421.06px; opacity: 0; transform: translateY(16%) rotate(-35deg);"
+  },
+  {
+    "device": "mobile",
+    "phase": "settled",
+    "overflow": false,
+    "position": "width: 744.8px; height: 744.8px; left: -182.4px; top: 421.06px; opacity: 1; transform: none;",
+    "scales": [
+      "none",
+      "none",
+      "none",
+      "matrix(1.26, 0, 0, 1.26, 0, 0)",
+      "none",
+      "none",
+      "none",
+      "none"
+    ]
+  }
+]

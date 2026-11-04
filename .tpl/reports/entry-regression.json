@@ -1,0 +1,9 @@
+{
+  "case": "首页首次进入的餐桌与区块入场",
+  "baselineCommit": "b100c70f411a6316bb674c648e2897901d05b797",
+  "baselineResult": "failed",
+  "observation": "主内容 AnimatePresence 的 initial=false 会通过 PresenceContext 抑制后代首次入场，餐桌首个观察即为 transform:none。",
+  "fix": "主内容保留首次 Presence 动画，公共组件继续使用自身入场轨迹与减少动态效果规则。",
+  "fixedResult": "passed",
+  "result": "PC 初态 translateX(22%) rotate(-35deg)，iPad/H5 初态 translateY(16%) rotate(-35deg)，结束均恢复 transform:none。"
+}

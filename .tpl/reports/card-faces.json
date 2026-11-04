@@ -1,0 +1,25 @@
+{
+  "phase": {
+    "faces": [
+      {
+        "culling": "hidden",
+        "design": "pz-card-face walnut",
+        "hidden": "true",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "culling": "hidden",
+        "design": "pz-card-face linen",
+        "hidden": "false",
+        "transform": "matrix3d(-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1)"
+      }
+    ],
+    "previewColumn": "auto",
+    "previewPosition": "sticky",
+    "rotation": "transform: rotateY(139.902deg);"
+  },
+  "end": {
+    "rotation": "transform: rotateY(180deg);",
+    "visible": "pz-card-face linen"
+  }
+}

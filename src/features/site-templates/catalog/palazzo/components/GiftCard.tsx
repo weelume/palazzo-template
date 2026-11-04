@@ -12,6 +12,7 @@ import { usePalazzoHost } from "../host";
 export function GiftCard({
   locale = "zh",
   design = "Walnut",
+  previousDesign = design,
   amount = 480,
   recipient = "",
   message = "",
@@ -19,6 +20,7 @@ export function GiftCard({
 }: {
   locale?: TemplateLocale;
   design?: string;
+  previousDesign?: string;
   amount?: number;
   recipient?: string;
   message?: string;
@@ -76,21 +78,36 @@ export function GiftCard({
             : {}
         }
       >
-        <div
-          className="pz-card-content"
-          style={{ transform: flip % 2 ? "rotateY(180deg)" : undefined }}
-        >
-          <div>
-            <strong>{text(host.brandName ?? brand.name, locale)}</strong>
-            <small>No. 0142</small>
-          </div>
-          <div>
-            <h3>{recipient || description}</h3>
-            <p>{message || pairing}</p>
-            <span className="pz-card-amount">€{amount}</span>
-          </div>
-        </div>
-        <motion.div className="pz-card-shine" style={{ left: shine }} />
+        {/* 正反面分别保留前后两种设计，使旋转过程中也保持文字方向正确。 */}
+        {[0, 1].map((side) => {
+          const faceDesign = side === flip % 2 ? design : previousDesign;
+          return (
+            <div
+              key={side}
+              className={`pz-card-face ${faceDesign.toLowerCase()}`}
+              aria-hidden={side !== flip % 2}
+              style={{
+                transform: `rotateY(${side * 180}deg)`,
+                ...(faceDesign === "Walnut"
+                  ? { backgroundImage: `url(${asset("table.png")})` }
+                  : {}),
+              }}
+            >
+              <div className="pz-card-content">
+                <div>
+                  <strong>{text(host.brandName ?? brand.name, locale)}</strong>
+                  <small>No. 0142</small>
+                </div>
+                <div>
+                  <h3>{recipient || description}</h3>
+                  <p>{message || pairing}</p>
+                  <span className="pz-card-amount">€{amount}</span>
+                </div>
+              </div>
+              <motion.div className="pz-card-shine" style={{ left: shine }} />
+            </div>
+          );
+        })}
       </motion.div>
     </motion.div>
   );

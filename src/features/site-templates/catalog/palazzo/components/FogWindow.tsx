@@ -187,7 +187,7 @@ export function FogWindow({ locale = "zh" }: { locale?: TemplateLocale }) {
           <motion.canvas
             ref={canvas}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: visible ? 1 : 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             onPointerMove={erase}
             onPointerDown={erase}
@@ -197,9 +197,11 @@ export function FogWindow({ locale = "zh" }: { locale?: TemplateLocale }) {
             aria-hidden="true"
           />
           <canvas className="pz-water" ref={water} aria-hidden="true" />
-          <div key={writing} className="pz-fog-writing">
-            {locale === "zh" ? "请进" : "Come in"}
-          </div>
+          {visible && (
+            <div key={writing} className="pz-fog-writing">
+              {locale === "zh" ? "请进" : "Come in"}
+            </div>
+          )}
         </>
       )}
       <button

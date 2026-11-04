@@ -7,9 +7,12 @@ import {
   useReducedMotion,
   useInView,
   animate,
+  useTransform,
+  useMotionValueEvent,
+  type MotionValue,
 } from "framer-motion";
 import Link from "next/link";
-import type { SiteTemplatePageProps } from "../../../types";
+import type { SiteTemplatePageProps, TemplateLocale } from "../../../types";
 import { asset, pricing, text } from "../config";
 import { courses } from "../content/courses";
 import { PairSwitch } from "./Layout";
@@ -25,8 +28,10 @@ export function LazySusan({ locale = "zh", basePath }: SiteTemplatePageProps) {
   const reduced = useReducedMotion();
   const region = useRef<HTMLDivElement>(null);
   const visible = useInView(region, { amount: 0.2 });
-  const [size, setSize] = useState({ width: 1440, height: 900 });
+  // 首次测量后创建餐桌，保证小屏首次入场使用自己的运动方向。
+  const [size, setSize] = useState({ width: 0, height: 0 });
   const idleUntil = useRef(0);
+  const lastAutoTurn = useRef(0);
   const frame = useRef(0);
   const lastStep = useRef(0);
   const drag = useRef<{
@@ -41,7 +46,6 @@ export function LazySusan({ locale = "zh", basePath }: SiteTemplatePageProps) {
   const select = useCallback(
     (next: number) => {
       if (count === 0) return;
-      setIndex(((next % count) + count) % count);
       animate(
         angle,
         (next * 360) / count,
@@ -52,6 +56,10 @@ export function LazySusan({ locale = "zh", basePath }: SiteTemplatePageProps) {
     },
     [angle, count, reduced],
   );
+  useMotionValueEvent(angle, "change", (value) => {
+    if (count > 0)
+      setIndex(((Math.round(value / (360 / count)) % count) + count) % count);
+  });
   const step = useCallback(
     (direction: number) => {
       const now = performance.now();
@@ -89,10 +97,14 @@ export function LazySusan({ locale = "zh", basePath }: SiteTemplatePageProps) {
   useEffect(() => () => cancelAnimationFrame(frame.current), []);
   useEffect(() => {
     if (paused || reduced || !visible || count < 2) return;
+    lastAutoTurn.current = performance.now();
     const timer = window.setInterval(() => {
-      if (performance.now() > idleUntil.current)
+      const now = performance.now();
+      if (now > idleUntil.current && now - lastAutoTurn.current >= 4800) {
         select(Math.round(angle.get() / (360 / count)) + 1);
-    }, 4800);
+        lastAutoTurn.current = now;
+      }
+    }, 250);
     return () => window.clearInterval(timer);
   }, [paused, reduced, select, angle, count, visible]);
   function pointerAngle(x: number, y: number) {
@@ -139,16 +151,17 @@ export function LazySusan({ locale = "zh", basePath }: SiteTemplatePageProps) {
     state.last = current;
     state.time = now;
     angle.set(state.angle);
-    setIndex(
-      ((Math.round(state.angle / (360 / count)) % count) + count) % count,
-    );
   }
-  function finish() {
+  function finish(cancelled = false) {
     const state = drag.current;
     if (!state) return;
     drag.current = null;
     setPaused(false);
     idleUntil.current = performance.now() + 7000;
+    if (cancelled) {
+      select(Math.round(state.angle / (360 / count)));
+      return;
+    }
     if (!state.moved) {
       step(1);
       return;
@@ -165,9 +178,6 @@ export function LazySusan({ locale = "zh", basePath }: SiteTemplatePageProps) {
       last = now;
       velocity *= Math.pow(0.93, dt * 60);
       angle.set(angle.get() + velocity * dt);
-      setIndex(
-        ((Math.round(angle.get() / (360 / count)) % count) + count) % count,
-      );
       if (Math.abs(velocity) < 25) {
         select(Math.round(angle.get() / (360 / count)));
         return;
@@ -252,8 +262,8 @@ export function LazySusan({ locale = "zh", basePath }: SiteTemplatePageProps) {
         ref={region}
         onPointerDown={begin}
         onPointerMove={move}
-        onPointerUp={finish}
-        onPointerCancel={finish}
+        onPointerUp={() => finish()}
+        onPointerCancel={() => finish(true)}
         role="group"
         tabIndex={0}
         aria-label={
@@ -274,53 +284,60 @@ export function LazySusan({ locale = "zh", basePath }: SiteTemplatePageProps) {
           }
         }}
       >
-        <motion.div
-          initial={
-            reduced
-              ? false
-              : { x: mobile ? 0 : "22%", y: mobile ? "16%" : 0, opacity: 0 }
-          }
-          animate={{ x: 0, y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 2.4, ease: [0.16, 1, 0.3, 1] }}
-          className="pz-table-position"
-          style={{
-            width: diameter,
-            height: diameter,
-            left: centerX - diameter / 2,
-            top: centerY - diameter / 2,
-          }}
-        >
-          <motion.div className="pz-table" style={{ rotate: angle }}>
-            <img
-              className="pz-table-wood"
-              src={asset("table.png")}
-              alt={locale === "zh" ? "圆形胡桃木餐桌" : "Round walnut table"}
-              draggable={false}
-            />
-            {courses.map((item, i) => (
-              <div
-                key={item.id}
-                className="pz-table-place"
-                style={{
-                  transform: `rotate(${(mobile ? 270 : 180) - (i * 360) / count}deg) translateX(${radius}px)`,
-                  width: plate,
-                  height: plate,
-                  marginLeft: -plate / 2,
-                  marginTop: -plate / 2,
-                }}
-              >
-                <motion.img
-                  initial={reduced ? false : { opacity: 0, scale: 1.12 }}
-                  animate={{ opacity: 1, scale: index === i ? 1.26 : 1 }}
-                  transition={{ duration: 1.1, delay: 0.6 + i * 0.12 }}
-                  src={asset(item.image)}
-                  alt={text(item.name, locale)}
-                  draggable={false}
-                />
-              </div>
-            ))}
+        {size.width > 0 && (
+          <motion.div
+            initial={
+              reduced
+                ? false
+                : {
+                    x: mobile ? 0 : "22%",
+                    y: mobile ? "16%" : 0,
+                    rotate: -35,
+                    opacity: 0,
+                  }
+            }
+            animate={{ x: 0, y: 0, rotate: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 2.4, ease: [0.16, 1, 0.3, 1] }}
+            className="pz-table-position"
+            style={{
+              width: diameter,
+              height: diameter,
+              left: centerX - diameter / 2,
+              top: centerY - diameter / 2,
+            }}
+          >
+            <motion.div className="pz-table" style={{ rotate: angle }}>
+              <img
+                className="pz-table-wood"
+                src={asset("table.png")}
+                alt={locale === "zh" ? "圆形胡桃木餐桌" : "Round walnut table"}
+                draggable={false}
+              />
+              {courses.map((item, i) => (
+                <div
+                  key={item.id}
+                  className="pz-table-place"
+                  style={{
+                    transform: `rotate(${(mobile ? 270 : 180) - (i * 360) / count}deg) translateX(${radius}px)`,
+                    width: plate,
+                    height: plate,
+                    marginLeft: -plate / 2,
+                    marginTop: -plate / 2,
+                  }}
+                >
+                  <CoursePlate
+                    course={item}
+                    index={i}
+                    count={count}
+                    angle={angle}
+                    locale={locale}
+                    reduced={Boolean(reduced)}
+                  />
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
-        </motion.div>
+        )}
       </div>
       <div className="pz-susan-hint">
         <button aria-pressed={paused} onClick={() => setPaused(!paused)}>
@@ -339,5 +356,40 @@ export function LazySusan({ locale = "zh", basePath }: SiteTemplatePageProps) {
         </span>
       </div>
     </section>
+  );
+}
+
+/** 每盘独立订阅餐桌角度，按与正面夹角连续缩放，保留整个盘沿。 */
+function CoursePlate({
+  course,
+  index,
+  count,
+  angle,
+  locale,
+  reduced,
+}: {
+  course: (typeof courses)[number];
+  index: number;
+  count: number;
+  angle: MotionValue<number>;
+  locale: TemplateLocale;
+  reduced: boolean;
+}) {
+  const scale = useTransform(angle, (value) => {
+    const delta =
+      ((((value - (index * 360) / count + 180) % 360) + 360) % 360) - 180;
+    return 1 + 0.26 * Math.max(0, 1 - Math.abs(delta) / (360 / count));
+  });
+  return (
+    <motion.div className="pz-plate-mask" style={{ scale }}>
+      <motion.img
+        initial={reduced ? false : { opacity: 0, scale: 1.12 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.1, delay: 0.6 + index * 0.12 }}
+        src={asset(course.image)}
+        alt={text(course.name, locale)}
+        draggable={false}
+      />
+    </motion.div>
   );
 }

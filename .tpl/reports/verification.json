@@ -3,8 +3,8 @@
   "format": "git-template-verification",
   "formatVersion": "0.2.0",
   "status": "passed",
-  "sourceDigest": "8fe9a442b014c0e87f4b0eb61417bb36fcb5eb4df1b2e591b86503b1bba70dc8",
-  "sourceCommit": "73723ba10d03016a4fbff436ee02c0f4b71841bd",
+  "sourceDigest": "430245f5095b57c5a71d39db1a3c5bbc23974378bd777618e3c9cb39864d2e22",
+  "sourceCommit": "b100c70f411a6316bb674c648e2897901d05b797",
   "environment": {
     "platform": "linux",
     "arch": "x64",
@@ -23,8 +23,8 @@
         "install",
         "--frozen-lockfile"
       ],
-      "startedAt": "2026-11-04T05:15:33.268Z",
-      "finishedAt": "2026-11-04T05:15:33.871Z",
+      "startedAt": "2026-11-04T05:49:21.277Z",
+      "finishedAt": "2026-11-04T05:49:21.811Z",
       "exitCode": 0
     },
     {
@@ -36,8 +36,8 @@
         "run",
         "typecheck"
       ],
-      "startedAt": "2026-11-04T05:15:33.872Z",
-      "finishedAt": "2026-11-04T05:15:35.199Z",
+      "startedAt": "2026-11-04T05:49:21.812Z",
+      "finishedAt": "2026-11-04T05:49:23.095Z",
       "exitCode": 0
     },
     {
@@ -49,8 +49,8 @@
         "run",
         "lint"
       ],
-      "startedAt": "2026-11-04T05:15:35.199Z",
-      "finishedAt": "2026-11-04T05:15:39.997Z",
+      "startedAt": "2026-11-04T05:49:23.095Z",
+      "finishedAt": "2026-11-04T05:49:25.557Z",
       "exitCode": 0
     },
     {
@@ -62,8 +62,8 @@
         "run",
         "build"
       ],
-      "startedAt": "2026-11-04T05:15:39.997Z",
-      "finishedAt": "2026-11-04T05:15:54.646Z",
+      "startedAt": "2026-11-04T05:49:25.557Z",
+      "finishedAt": "2026-11-04T05:49:44.455Z",
       "exitCode": 0
     }
   ],
@@ -72,7 +72,7 @@
       "id": "web",
       "status": "passed",
       "stopped": true,
-      "checkedAt": "2026-11-04T05:15:56.138Z",
+      "checkedAt": "2026-11-04T05:49:45.938Z",
       "reason": "独立生产服务 PORT=13966，22 个双语路径 HTTP 200，验收后已停止。"
     }
   ],
@@ -81,5 +81,5 @@
     "雾层文字使用字体遮罩渐显，与参考站手写笔迹存在细节差异。",
     "图片再分发及商业授权待确认。"
   ],
-  "checkedAt": "2026-11-04T05:15:56.138Z"
+  "checkedAt": "2026-11-04T05:49:45.938Z"
 }

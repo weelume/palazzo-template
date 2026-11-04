@@ -1,0 +1,10 @@
+{
+  "after3_5s": {
+    "animation": "pz-handwrite, pz-wordfade",
+    "opacity": "1"
+  },
+  "after31_5s": {
+    "animation": "pz-handwrite, pz-wordfade",
+    "opacity": "0"
+  }
+}

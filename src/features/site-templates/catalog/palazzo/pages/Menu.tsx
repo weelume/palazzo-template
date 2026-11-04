@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { RollingPrice } from "../components/RollingPrice";
 import type { SiteTemplatePageProps } from "../../../types";
 import { brand, pricing, text } from "../config";
 import { allergens, wines } from "../content/courses";
@@ -66,17 +66,7 @@ export default function Menu({
           </p>
           <div className="pz-total">
             <span>{label("含所选配饮", "With your pairing")}</span>
-            <AnimatePresence mode="wait">
-              <motion.strong
-                key={total}
-                initial={{ filter: "blur(6px)", y: 10, opacity: 0 }}
-                animate={{ filter: "blur(0px)", y: 0, opacity: 1 }}
-                exit={{ filter: "blur(6px)", y: -10, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                €{total}
-              </motion.strong>
-            </AnimatePresence>
+            <RollingPrice value={total} />
           </div>
           <Link className="pz-button" href={`${basePath}/reservations`}>
             {label("预订品鉴菜单", "Book the tasting menu")}

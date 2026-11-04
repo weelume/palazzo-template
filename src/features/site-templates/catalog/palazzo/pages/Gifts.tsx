@@ -13,6 +13,7 @@ export default function Gifts({
 }: SiteTemplatePageProps) {
   const [design, setDesign] = useState("Walnut"),
     [flip, setFlip] = useState(0);
+  const [previousDesign, setPreviousDesign] = useState("Walnut");
   const [amount, setAmount] = useState(480),
     [custom, setCustom] = useState(false),
     [post, setPost] = useState(false);
@@ -82,6 +83,7 @@ export default function Gifts({
           <GiftCard
             locale={locale}
             design={design}
+            previousDesign={previousDesign}
             amount={Number.isFinite(amount) ? amount : 0}
             recipient={recipient}
             message={message}
@@ -109,7 +111,8 @@ export default function Gifts({
                   aria-pressed={design === value}
                   onClick={() => {
                     if (design !== value) {
-                      setFlip(flip + 1);
+                      setPreviousDesign(design);
+                      setFlip((value) => value + 1);
                       setDesign(value);
                     }
                     setStatus("");
